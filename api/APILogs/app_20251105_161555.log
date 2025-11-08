@@ -1,0 +1,13 @@
+2025-11-05 16:15:59.398 +01:00 [INF] Now listening on: http://localhost:5169
+2025-11-05 16:15:59.405 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-05 16:15:59.405 +01:00 [INF] Hosting environment: Development
+2025-11-05 16:15:59.405 +01:00 [INF] Content root path: C:\Homecare\api
+2025-11-05 16:16:15.396 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/ - null null
+2025-11-05 16:16:15.519 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/ - 404 0 null 125.2101ms
+2025-11-05 16:16:15.556 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/, Response status code: 404
+2025-11-05 16:18:06.135 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/ - null null
+2025-11-05 16:18:06.139 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/ - 404 0 null 3.7931ms
+2025-11-05 16:18:06.139 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/, Response status code: 404
+2025-11-05 16:20:36.961 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/ - null null
+2025-11-05 16:20:36.963 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/ - 404 0 null 2.1234ms
+2025-11-05 16:20:36.963 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/, Response status code: 404
