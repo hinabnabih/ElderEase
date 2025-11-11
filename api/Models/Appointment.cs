@@ -28,6 +28,5 @@ namespace HomecareApp.Models
         
               // Navigation property
         public virtual List<AvailableDay>? AvailableDays { get; set; }
-
     }
 }

@@ -8,10 +8,10 @@ namespace HomecareApp.Controllers
     [Route("api/[controller]")]
     public class ApiAvailableDayController : ControllerBase
     {
-        private readonly IHomecareRepository _repository;
+        private readonly IAvailableDayRepository _repository;
         private readonly ILogger<ApiAvailableDayController> _logger;
 
-        public ApiAvailableDayController(IHomecareRepository repository, ILogger<ApiAvailableDayController> logger)
+        public ApiAvailableDayController(IAvailableDayRepository repository, ILogger<ApiAvailableDayController> logger)
         {
             _repository = repository;
             _logger = logger;

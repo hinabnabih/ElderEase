@@ -9,10 +9,10 @@ namespace HomecareApp.Controllers
     [Route("api/[controller]")]
     public class AppointmentController : ControllerBase
     {
-        private readonly IHomecareRepository _repository;
+        private readonly IAppointmentRepository _repository;
         private readonly ILogger<AppointmentController> _logger;
 
-        public AppointmentController(IHomecareRepository repository, ILogger<AppointmentController> logger)
+        public AppointmentController(IAppointmentRepository repository, ILogger<AppointmentController> logger)
         {
             _repository = repository;
             _logger = logger;

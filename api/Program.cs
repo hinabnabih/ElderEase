@@ -22,7 +22,8 @@ builder.Services.AddCors(options =>
         builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
 
-builder.Services.AddScoped<IHomecareRepository, HomecareRepository>();
+builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+builder.Services.AddScoped<IAvailableDayRepository, AvailableDayRepository>();
 
 var loggerConfiguration = new LoggerConfiguration()
     .MinimumLevel.Information()
