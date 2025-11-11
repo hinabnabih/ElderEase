@@ -1,36 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
 using HomecareApp.DAL;
 using HomecareApp.Models;
-using Serilog;
-using HomecareApp.ViewModels;
 using HomecareApp.DTOs;
 
 namespace HomecareApp.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AppointmentAPIController : ControllerBase
+    public class AppointmentController : ControllerBase
     {
         private readonly IHomecareRepository _repository;
-        private readonly ILogger<AppointmentAPIController> _logger;
+        private readonly ILogger<AppointmentController> _logger;
 
-        public AppointmentAPIController(IHomecareRepository repository, ILogger<AppointmentAPIController> logger)
+        public AppointmentController(IHomecareRepository repository, ILogger<AppointmentController> logger)
         {
             _repository = repository;
             _logger = logger;
         }
 
-        // GET: api/ApiAppointment
         [HttpGet("appointmentlist")]
         public async Task<IActionResult> AppointmentList()
         {
             var appointments = await _repository.GetAllAppointments();
             if (appointments == null)
             {
-                _logger.LogError("[AppointmentAPIController] Appointment List not found while executing _repository.GetAllAppointments");
-                return NotFound("Appointment List not found");
+                _logger.LogError("[AppointmentController] Appointment list not found while executing _repository.GetAllAppointments()");
+                return NotFound("Appointment list not found");
             }
-
             var appointmentDtos = appointments.Select(appointment => new AppointmentDto
             {
                 AppointmentId = appointment.AppointmentId,
@@ -43,48 +39,39 @@ namespace HomecareApp.Controllers
                 EndTime = appointment.EndTime,
                 CaregiverName = appointment.CaregiverName,
                 Status = appointment.Status
-
             });
             return Ok(appointmentDtos);
         }
-    }
 
-    public class AppointmentController : Controller
-    {
-        private readonly IHomecareRepository _repository;
-        private readonly ILogger<AppointmentController> _logger;
-
-        public AppointmentController(IHomecareRepository repository, ILogger<AppointmentController> logger)
+        [HttpPost("create")]
+        public async Task<IActionResult> Create([FromBody] AppointmentDto appointmentDto)
         {
-            _repository = repository;
-            _logger = logger;
-        }
-        
-        public async Task<IActionResult> Table()
-        {
-            var appointments = await _repository.GetAllAppointments();
-            if (appointments == null)
+            if (appointmentDto == null)
             {
-                _logger.LogError("[AppointmentController] Appointment list not found while executing _repository.GetAllAppointments()");
-                return NotFound("Appointment list not found");
+                return BadRequest("Appointment cannot be null");
             }
-            var appointmentsViewModel = new AppointmentListViewModel(appointments, "Table");
-            return View(appointmentsViewModel);
-        }
-
-        public async Task<IActionResult> Grid()
-        {
-            var appointments = await _repository.GetAllAppointments();
-            if (appointments == null)
+            var newAppointment = new Appointment
             {
-                _logger.LogError("[AppointmentController] Appointment list not found while executing _repository.GetAllAppointments()");
-                return NotFound("Appointment list not found");
-            }
-            var appointmentsViewModel = new AppointmentListViewModel(appointments, "Grid");
-            return View(appointmentsViewModel);
+                AvailableDayId = appointmentDto.AvailableDayId,
+                PatientName = appointmentDto.PatientName,
+                TaskType = appointmentDto.TaskType,
+                Description = appointmentDto.Description,
+                AppointmentDate = appointmentDto.AppointmentDate,
+                StartTime = appointmentDto.StartTime,
+                EndTime = appointmentDto.EndTime,
+                CaregiverName = appointmentDto.CaregiverName,
+                Status = appointmentDto.Status
+            };
+            bool returnOk = await _repository.CreateAppointment(newAppointment);
+            if (returnOk)
+                return CreatedAtAction(nameof(AppointmentList), new { id = newAppointment.AppointmentId }, newAppointment);
+
+            _logger.LogWarning("[AppointmentController] Appointment creation failed {@appointment}", newAppointment);
+            return StatusCode(500, "Internal server error");
         }
 
-        public async Task<IActionResult> Details(int id)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAppointment(int id)
         {
             var appointment = await _repository.GetAppointmentById(id);
             if (appointment == null)
@@ -92,66 +79,44 @@ namespace HomecareApp.Controllers
                 _logger.LogError("[AppointmentController] Appointment not found for the AppointmentId {AppointmentId:0000}", id);
                 return NotFound("Appointment not found for the AppointmentId");
             }
-            return View(appointment);
+            return Ok(appointment);
         }
 
-        [HttpGet]
-        public IActionResult Create()
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] AppointmentDto appointmentDto)
         {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create(Appointment appointment)
-        {
-            if (ModelState.IsValid)
+            if (appointmentDto == null)
             {
-                bool returnOk = await _repository.CreateAppointment(appointment);
-                if (returnOk)
-                    return RedirectToAction(nameof(Table));
+                return BadRequest("Appointment data cannot be null");
             }
-            _logger.LogWarning("[AppointmentController] Appointment creation failed {@appointment}", appointment);
-            return View(appointment);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Update(int id)
-        {
-            var appointment = await _repository.GetAppointmentById(id);
-            if (appointment == null)
+            // Find the appointment in the database
+            var existingAppointment = await _repository.GetAppointmentById(id);
+            if (existingAppointment == null)
             {
-                _logger.LogError("[AppointmentController] Appointment not found when updating the AppointmentId {AppointmentId:0000}", id);
-                return BadRequest("Appointment not found for the AppointmentId");
+                return NotFound("Appointment not found");
             }
-            return View(appointment);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Update(Appointment appointment)
-        {
-            if (ModelState.IsValid)
+            // Update the appointment properties
+            existingAppointment.AvailableDayId = appointmentDto.AvailableDayId;
+            existingAppointment.PatientName = appointmentDto.PatientName;
+            existingAppointment.TaskType = appointmentDto.TaskType;
+            existingAppointment.Description = appointmentDto.Description;
+            existingAppointment.AppointmentDate = appointmentDto.AppointmentDate;
+            existingAppointment.StartTime = appointmentDto.StartTime;
+            existingAppointment.EndTime = appointmentDto.EndTime;
+            existingAppointment.CaregiverName = appointmentDto.CaregiverName;
+            existingAppointment.Status = appointmentDto.Status;
+            // Save the changes
+            bool updateSuccessful = await _repository.UpdateAppointment(existingAppointment);
+            if (updateSuccessful)
             {
-                bool returnOk = await _repository.UpdateAppointment(appointment);
-                if (returnOk)
-                    return RedirectToAction(nameof(Table));
+                return Ok(existingAppointment); // Return the updated appointment
             }
-            _logger.LogWarning("[AppointmentController] Appointment update failed {@appointment}", appointment);
-            return View(appointment);
+
+            _logger.LogWarning("[AppointmentController] Appointment update failed {@appointment}", existingAppointment);
+            return StatusCode(500, "Internal server error");
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var appointment = await _repository.GetAppointmentById(id);
-            if (appointment == null)
-            {
-                _logger.LogError("[AppointmentController] Appointment not found for the AppointmentId {AppointmentId:0000}", id);
-                return BadRequest("Appointment not found for the AppointmentId");
-            }
-            return View(appointment);
-        }
-
-        [HttpPost]
+        [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             bool returnOk = await _repository.DeleteAppointment(id);
@@ -160,7 +125,7 @@ namespace HomecareApp.Controllers
                 _logger.LogError("[AppointmentController] Appointment deletion failed for the AppointmentId {AppointmentId:0000}", id);
                 return BadRequest("Appointment deletion failed");
             }
-            return RedirectToAction(nameof(Table));
-        }
+            return NoContent();
+        }        
     }
 }
