@@ -38,10 +38,11 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    DBInit.Seed(app);
+    //DBInit.Seed(app);
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseStaticFiles();
 app.UseRouting();

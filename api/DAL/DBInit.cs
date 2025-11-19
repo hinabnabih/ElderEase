@@ -41,7 +41,9 @@ namespace HomecareApp.DAL
                         TaskType = "Medication Reminder",
                         Description = "Morning medication",
                         StartTime = new TimeSpan(9, 0, 0),
-                        EndTime = new TimeSpan(9, 30, 0)
+                        EndTime = new TimeSpan(9, 30, 0),
+                        CaregiverName = "Hiba",
+                        Status = "Cancelled"
                     },
                     new Appointment {
                         AvailableDayId = 2,
@@ -49,7 +51,9 @@ namespace HomecareApp.DAL
                         TaskType = "Physical Therapy",
                         Description = "Afternoon session",
                         StartTime = new TimeSpan(14, 0, 0),
-                        EndTime = new TimeSpan(15, 0, 0)
+                        EndTime = new TimeSpan(15, 0, 0),
+                        CaregiverName = "Rabia",
+                        Status = "Completed"
                     }
                 };
             context.AddRange(appointments);

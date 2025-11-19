@@ -18,10 +18,10 @@ namespace HomecareApp.Models
         
         public string? Description { get; set; }
 
-        public DateTime AppointmentDate { get; set; }
+        public DateTime AppointmentDate { get; set; } = DateTime.Now;
         
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
+        public TimeSpan StartTime { get; set; } = new TimeSpan(9,0,0);
+        public TimeSpan EndTime { get; set; } = new TimeSpan(17,0,0);
 
         public string CaregiverName { get; set; } = string.Empty;
 
