@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
-using HomecareApp.Controllers;
-using HomecareApp.DAL;
-using HomecareApp.Models;
+using Homecare.Controllers;
+using Homecare.DAL;
+using Homecare.Models;
 
-namespace HomecareApp.Tests.Controllers;
+namespace Homecare.Tests.Controllers;
 
 public class AvailableDayControllerTests
 {
@@ -110,51 +110,5 @@ public class AvailableDayControllerTests
         var notFoundResult = Assert.IsType<NotFoundResult>(result);
     }
 
-    /*[Fact]
-    public async Task TestGetAvailableDays()
-    {
-        // Arrange
-        var availableDayList = new List<AvailableDay>()
-        {
-            new AvailableDay
-            {
-                AvailableDayId = 1,
-                Date = new DateTime(2024, 1, 15),
-                StartTime = new TimeSpan(8, 0, 0),
-                EndTime = new TimeSpan(16, 0, 0),
-                HealthcareWorker = "Kari Olsen",
-                Notes = "Available for home visits",
-                ServiceType = "General Care"
-            },
-            new AvailableDay
-            {
-                AvailableDayId = 2,
-                Date = new DateTime(2024, 1, 16),
-                StartTime = new TimeSpan(9, 0, 0),
-                EndTime = new TimeSpan(17, 0, 0),
-                HealthcareWorker = "Per Hansen",
-                Notes = "Specialized care available",
-                ServiceType = "Medical Care"
-            }
-        };
-
-        var mockAvailableDayRepository = new Mock<IAvailableDayRepository>();
-        mockAvailableDayRepository.Setup(repo => repo.GetAllAvailableDays()).ReturnsAsync(availableDayList);
-
-        var mockLogger = new Mock<ILogger<AvailableDayController>>();
-        var availableDayController = new AvailableDayController(mockAvailableDayRepository.Object, mockLogger.Object);
-
-        // Act
-        var result = await availableDayController.GetAvailableDays();
-
-        // Assert
-        var okResult = Assert.IsType<OkObjectResult>(result.Result);
-        var returnedAvailableDays = Assert.IsAssignableFrom<IEnumerable<AvailableDay>>(okResult.Value);
-        Assert.Equal(2, returnedAvailableDays.Count());
-
-        // Verify first available day properties
-        var firstAvailableDay = returnedAvailableDays.First();
-        Assert.Equal("Kari Olsen", firstAvailableDay.HealthcareWorker);
-        Assert.Equal("General Care", firstAvailableDay.ServiceType);
-    }*/
+    
 }

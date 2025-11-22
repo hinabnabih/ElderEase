@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using HomecareApp.DAL;
+using Homecare.DAL;
 using Serilog;
 using Serilog.Events;
+using Newtonsoft.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,18 +17,19 @@ builder.Services.AddDbContext<HomecareDbContext>(options => {
     options.UseSqlite(builder.Configuration["ConnectionStrings:HomecareDbContextConnection"]);
 });
 
+builder.Services.AddControllers();
 builder.Services.AddCors(options =>
-{
-    options.AddPolicy("CorsPolicy",
-        builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-});
+        {
+            options.AddPolicy("CorsPolicy",
+                builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+        });
 
 builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 builder.Services.AddScoped<IAvailableDayRepository, AvailableDayRepository>();
 
 var loggerConfiguration = new LoggerConfiguration()
     .MinimumLevel.Information()
-    .WriteTo.File($"APILogs/app_{DateTime.Now:yyyyMMdd_HHmmss}.log")
+    .WriteTo.File($"api\\Logs\\app_{DateTime.Now:yyyyMMdd_HHmmss}.log")
     .Filter.ByExcluding(e => e.Properties.TryGetValue("SourceContext", out var value) &&
                             e.Level == LogEventLevel.Information &&
                             e.MessageTemplate.Text.Contains("Executed DbCommand"));

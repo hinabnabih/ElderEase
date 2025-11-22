@@ -23,7 +23,7 @@ const AvailableDayListPage: React.FC = () => {
     setError(null);
 
     try {
-      const response = await fetch(`${API_URL}/api/ApiAvailableDay`);
+      const response = await fetch(`${API_URL}/api/AvailableDay`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

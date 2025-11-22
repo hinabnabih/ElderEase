@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using HomecareApp.DAL;
-using HomecareApp.Models;
+using Homecare.DAL;
+using Homecare.Models;
 
-namespace HomecareApp.Controllers
+namespace Homecare.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -17,7 +17,7 @@ namespace HomecareApp.Controllers
             _logger = logger;
         }
 
-        // GET: api/ApiAvailableDay
+        // GET: api/AvailableDay
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AvailableDay>>> GetAvailableDays()
         {
@@ -29,7 +29,7 @@ namespace HomecareApp.Controllers
             return Ok(availableDays);
         }
 
-        // GET: api/ApiAvailableDay/5
+        // GET: api/AvailableDay/5
         [HttpGet("{id}")]
         public async Task<ActionResult<AvailableDay>> GetAvailableDay(int id)
         {
@@ -41,7 +41,7 @@ namespace HomecareApp.Controllers
             return availableDay;
         }
 
-        // POST: api/ApiAvailableDay
+        // POST: api/AvailableDay
         [HttpPost]
         public async Task<ActionResult<AvailableDay>> PostAvailableDay(AvailableDay availableDay)
         {
@@ -53,7 +53,7 @@ namespace HomecareApp.Controllers
             return CreatedAtAction(nameof(GetAvailableDay), new { id = availableDay.AvailableDayId }, availableDay);
         }
 
-        // PUT: api/ApiAvailableDay/5
+        // PUT: api/AvailableDay/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAvailableDay(int id, AvailableDay availableDay)
         {
@@ -70,7 +70,7 @@ namespace HomecareApp.Controllers
             return NoContent();
         }
 
-        // DELETE: api/ApiAvailableDay/5
+        // DELETE: api/AvailableDay/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAvailableDay(int id)
         {

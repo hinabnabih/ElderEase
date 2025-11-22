@@ -1,6 +1,6 @@
-using HomecareApp.Models;
+using Homecare.Models;
 
-namespace HomecareApp.ViewModels;
+namespace Homecare.ViewModels;
     public class AppointmentListViewModel
     {
         public IEnumerable<Appointment> Appointments { get; set; } = new List<Appointment>();

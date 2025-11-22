@@ -1,6 +1,6 @@
-using HomecareApp.Models;
+using Homecare.Models;
 
-namespace HomecareApp.DAL;
+namespace Homecare.DAL;
 
 public interface IAppointmentRepository
 {

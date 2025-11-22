@@ -17,6 +17,8 @@ interface BookingForm {
   patientName: string;
   taskType: string;
   description: string;
+  selectedDate: string;
+  selectedTime: string;
 }
 
 const BookAppointmentPage: React.FC = () => {
@@ -28,16 +30,41 @@ const BookAppointmentPage: React.FC = () => {
   
   const [formData, setFormData] = useState<BookingForm>({
     patientName: '',
-    taskType: 'Assistance',
-    description: ''
+    taskType: 'Velg',
+    description: '',
+    selectedDate: '',
+    selectedTime: ''
   });
+
+  const getNextDays = (numberOfDays: number): { date: string; weekDay: string; day: number; month: string }[] => {
+    const days = [];
+    const today = new Date();
+    
+    for (let i = 0; i < numberOfDays; i++) {
+      const date = new Date();
+      date.setDate(today.getDate() + i);
+      
+      const weekDay = date.toLocaleDateString('nb-NO', { weekday: 'short' });
+      const day = date.getDate();
+      const month = date.toLocaleDateString('nb-NO', { month: 'short' });
+      
+      days.push({
+        date: date.toISOString().split('T')[0], // YYYY-MM-DD format
+        weekDay: weekDay.charAt(0).toUpperCase() + weekDay.slice(1), // Stor forbokstav
+        day: day,
+        month: month
+      });
+    }
+    
+    return days;
+  };
 
   const fetchAvailableDays = async (): Promise<void> => {
     setLoading(true);
     setError(null);
 
     try {
-      const response = await fetch(`${API_URL}/api/ApiAvailableDay`);
+      const response = await fetch(`${API_URL}/api/AvailableDay`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -91,12 +118,7 @@ const BookAppointmentPage: React.FC = () => {
 
       await response.json();
       
-      setSuccess(`Avtale booket med ${availableDay.healthcareWorker} på ${new Date(availableDay.date).toLocaleDateString('no-NO')}`);
-      setFormData({
-        patientName: '',
-        taskType: 'Assistance',
-        description: ''
-      });
+      
       
       fetchAvailableDays();
     } catch (error) {
@@ -159,14 +181,73 @@ const BookAppointmentPage: React.FC = () => {
                     onChange={(e) => setFormData({...formData, taskType: e.target.value})}
                     required
                   >
-                    <option value="Assistance">Assistance</option>
-                    <option value="Medication">Medication</option>
-                    <option value="Shopping">Shopping</option>
-                    <option value="Chores">Chores</option>
+                    <option value="Velg">Velg oppgavetype</option>
+                    <option value="Personal-care">Personlig pleie</option>
+                    <option value="Medication">Medisinering</option>
+                    <option value="Health-check">Helse sjekk</option>
+                    <option value="Shopping-help">Handlehjelp</option>
                   </Form.Select>
                 </Form.Group>
               </Col>
             </Row>
+
+            {/* Seniorvennlig kalender */}
+      <Form.Group className="mb-4">
+        <Form.Label className="fw-bold">Velg dato *</Form.Label>
+        <div className="d-flex flex-wrap gap-3">
+          {getNextDays(4).map((day) => (
+            <div
+              key={day.date}
+              className={`p-3 border rounded text-center cursor-pointer ${
+                formData.selectedDate === day.date 
+                  ? 'bg-primary text-white' 
+                  : 'bg-light'
+              }`}
+              style={{ 
+                minWidth: '120px',
+                fontSize: '1.1rem',
+                transition: 'all 0.2s'
+              }}
+              onClick={() => setFormData({...formData, selectedDate: day.date})}
+            >
+              <div className="fw-bold">{day.weekDay}</div>
+              <div>{day.date}</div>
+              <small className="text-muted">{day.month}</small>
+            </div>
+          ))}
+        </div>
+      </Form.Group>
+
+      {/* Enkel tidvelger */}
+      <Form.Group className="mb-4">
+        <Form.Label className="fw-bold">Velg klokkeslett *</Form.Label>
+        <div className="d-flex flex-wrap gap-2">
+          {[
+            '08:00', '09:00', '10:00', '11:00', 
+            '12:00', '13:00', '14:00', '15:00',
+            '16:00', '17:00', '18:00'
+          ].map((time) => (
+            <button
+              key={time}
+              type="button"
+              className={`btn ${
+                formData.selectedTime === time 
+                  ? 'btn-primary' 
+                  : 'btn-outline-primary'
+              }`}
+              style={{ 
+                fontSize: '1.1rem',
+                padding: '10px 15px',
+                minWidth: '80px'
+              }}
+              onClick={() => setFormData({...formData, selectedTime: time})}
+            >
+              {time}
+            </button>
+          ))}
+        </div>
+      </Form.Group>
+
             <Form.Group className="mb-3">
               <Form.Label>Beskrivelse</Form.Label>
               <Form.Control
@@ -216,7 +297,11 @@ const BookAppointmentPage: React.FC = () => {
             ))}
           </Row>
         )}
+
+        
       </div>
     </div>
   );
+
+  
 }; export default BookAppointmentPage;

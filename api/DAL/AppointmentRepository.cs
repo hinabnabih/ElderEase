@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using HomecareApp.Models;
+using Homecare.Models;
  
-namespace HomecareApp.DAL
+namespace Homecare.DAL
 {
     public class AppointmentRepository : IAppointmentRepository
     {

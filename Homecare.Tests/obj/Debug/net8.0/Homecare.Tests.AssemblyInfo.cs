@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Homecare.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e1c20a7d4eec4ab6eaaf84248dda417514953a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0888612e58da981b8c0c8e35cb8dc26e6acd3f12")]
 [assembly: System.Reflection.AssemblyProductAttribute("Homecare.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Homecare.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

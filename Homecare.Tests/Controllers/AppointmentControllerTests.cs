@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
-using HomecareApp.Controllers;
-using HomecareApp.DAL;
-using HomecareApp.Models;
-using HomecareApp.DTOs;
+using Homecare.Controllers;
+using Homecare.DAL;
+using Homecare.Models;
+using Homecare.DTOs;
 
 namespace Homecare.Tests.Controllers;
 

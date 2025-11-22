@@ -1,5 +1,5 @@
 import { Navbar, Nav } from 'react-bootstrap';
-type ViewType = 'home' | 'book' | 'myAppointments' | 'availableDays';
+type ViewType = 'home' | 'book' | 'myAppointments' | 'availableDay';
 
 interface NavMenuProps {
   currentView: ViewType;
@@ -46,11 +46,11 @@ const NavMenu: React.FC<NavMenuProps> = ({ currentView, setCurrentView }) => {
             Mine Avtaler
           </Nav.Link>
           <Nav.Link 
-            onClick={() => setCurrentView('availableDays')}
+            onClick={() => setCurrentView('availableDay')}
             style={{ 
               cursor: 'pointer', 
-              color: currentView === 'availableDays' ? 'white' : 'rgba(255,255,255,.55)',
-              fontWeight: currentView === 'availableDays' ? 'bold' : 'normal'
+              color: currentView === 'availableDay' ? 'white' : 'rgba(255,255,255,.55)',
+              fontWeight: currentView === 'availableDay' ? 'bold' : 'normal'
             }}
           >
             Tilgjengelige Dager

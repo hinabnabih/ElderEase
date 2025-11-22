@@ -1,5 +1,0 @@
-2025-11-11 18:19:19.229 +01:00 [INF] No migrations were applied. The database is already up to date.
-2025-11-11 18:19:20.016 +01:00 [INF] Now listening on: http://localhost:5169
-2025-11-11 18:19:20.018 +01:00 [INF] Application started. Press Ctrl+C to shut down.
-2025-11-11 18:19:20.018 +01:00 [INF] Hosting environment: Development
-2025-11-11 18:19:20.019 +01:00 [INF] Content root path: C:\EKSAMEN ITPE3200\Homecare2\Homecare\api

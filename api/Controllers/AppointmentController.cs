@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using HomecareApp.DAL;
-using HomecareApp.Models;
-using HomecareApp.DTOs;
+using Homecare.DAL;
+using Homecare.Models;
+using Homecare.DTOs;
 
-namespace HomecareApp.Controllers
+namespace Homecare.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

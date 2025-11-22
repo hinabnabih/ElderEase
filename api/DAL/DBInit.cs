@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using HomecareApp.Models;
+using Homecare.Models;
 
-namespace HomecareApp.DAL
+namespace Homecare.DAL
 {
     public static class DBInit
     {
@@ -42,11 +42,21 @@ namespace HomecareApp.DAL
                         Description = "Morning medication",
                         StartTime = new TimeSpan(9, 0, 0),
                         EndTime = new TimeSpan(9, 30, 0),
-                        CaregiverName = "Hiba",
+                        CaregiverName = "Rabia",
                         Status = "Cancelled"
                     },
                     new Appointment {
                         AvailableDayId = 2,
+                        PatientName = "Jane Smith",
+                        TaskType = "Physical Therapy",
+                        Description = "Afternoon session",
+                        StartTime = new TimeSpan(14, 0, 0),
+                        EndTime = new TimeSpan(15, 0, 0),
+                        CaregiverName = "Rabia",
+                        Status = "Completed"
+                    },
+                    new Appointment {
+                        AvailableDayId = 3,
                         PatientName = "Jane Smith",
                         TaskType = "Physical Therapy",
                         Description = "Afternoon session",
