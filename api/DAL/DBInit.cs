@@ -13,8 +13,8 @@ namespace Homecare.DAL
             context.Database.EnsureCreated();
 
 
-            context.Database.Migrate();
-            System.Threading.Thread.Sleep(500);
+            /*context.Database.Migrate();
+            System.Threading.Thread.Sleep(500);*/
 
 
             var availableDays = new List<AvailableDay>
@@ -55,16 +55,6 @@ namespace Homecare.DAL
                         CaregiverName = "Rabia",
                         Status = "Completed"
                     },
-                    new Appointment {
-                        AvailableDayId = 3,
-                        PatientName = "Jane Smith",
-                        TaskType = "Physical Therapy",
-                        Description = "Afternoon session",
-                        StartTime = new TimeSpan(14, 0, 0),
-                        EndTime = new TimeSpan(15, 0, 0),
-                        CaregiverName = "Rabia",
-                        Status = "Completed"
-                    }
                 };
             context.AddRange(appointments);
             context.SaveChanges();

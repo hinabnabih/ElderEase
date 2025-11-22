@@ -31,7 +31,6 @@ namespace Homecare.DAL
         {
             try
             {
-                await Task.Delay(100);
                 return await _db.AvailableDays.ToListAsync();
             }
             catch (Exception ex)

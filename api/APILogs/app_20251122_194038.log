@@ -1,0 +1,158 @@
+2025-11-22 19:40:39.892 +01:00 [INF] User profile is available. Using 'C:\Users\Bruker\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-22 19:40:39.991 +01:00 [INF] Now listening on: http://localhost:5169
+2025-11-22 19:40:39.998 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-22 19:40:40.000 +01:00 [INF] Hosting environment: Development
+2025-11-22 19:40:40.001 +01:00 [INF] Content root path: C:\Skrivebord\Exam\Homecare\api
+2025-11-22 19:40:50.667 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/ - null null
+2025-11-22 19:40:50.833 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/ - 404 0 null 168.4461ms
+2025-11-22 19:40:50.839 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/, Response status code: 404
+2025-11-22 19:40:54.456 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/index.html - null null
+2025-11-22 19:40:54.568 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/index.html - 200 null text/html;charset=utf-8 111.5916ms
+2025-11-22 19:40:54.675 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - null null
+2025-11-22 19:40:54.861 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 185.6486ms
+2025-11-22 19:41:13.792 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Auth/register - application/json-patch+json 94
+2025-11-22 19:41:13.803 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:41:13.804 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:41:13.810 +01:00 [INF] Executing endpoint 'HomecareApp.Controllers.AuthController.Register (api)'
+2025-11-22 19:41:13.861 +01:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Homecare.DTOs.RegisterDto) on controller HomecareApp.Controllers.AuthController (api).
+2025-11-22 19:41:15.055 +01:00 [INF] User created a new account with password.
+2025-11-22 19:41:15.067 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-22 19:41:15.132 +01:00 [INF] Executed action HomecareApp.Controllers.AuthController.Register (api) in 1262.8807ms
+2025-11-22 19:41:15.133 +01:00 [INF] Executed endpoint 'HomecareApp.Controllers.AuthController.Register (api)'
+2025-11-22 19:41:15.138 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Auth/register - 200 42 application/json; charset=utf-8 1345.4799ms
+2025-11-22 19:42:41.277 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Auth/login - application/json-patch+json 63
+2025-11-22 19:42:41.281 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:42:41.281 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:42:41.287 +01:00 [INF] Executing endpoint 'HomecareApp.Controllers.AuthController.Login (api)'
+2025-11-22 19:42:41.298 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Homecare.DTOs.LoginDto) on controller HomecareApp.Controllers.AuthController (api).
+2025-11-22 19:42:41.593 +01:00 [INF] [AuthAPIController] user authorised for string
+2025-11-22 19:42:41.651 +01:00 [INF] [AuthAPIController] JWT token created for string
+2025-11-22 19:42:41.703 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-22 19:42:41.706 +01:00 [INF] Executed action HomecareApp.Controllers.AuthController.Login (api) in 408.2272ms
+2025-11-22 19:42:41.707 +01:00 [INF] Executed endpoint 'HomecareApp.Controllers.AuthController.Login (api)'
+2025-11-22 19:42:41.708 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Auth/login - 200 485 application/json; charset=utf-8 430.7084ms
+2025-11-22 19:44:35.338 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/AvailableDay/create - application/json-patch+json 215
+2025-11-22 19:44:35.339 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:44:35.339 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:44:35.439 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AvailableDayController.Create (api)'
+2025-11-22 19:44:35.446 +01:00 [INF] Route matched with {action = "Create", controller = "AvailableDay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Homecare.DTOs.AvailableDayDto) on controller Homecare.Controllers.AvailableDayController (api).
+2025-11-22 19:44:35.490 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-22 19:44:35.531 +01:00 [INF] Executed action Homecare.Controllers.AvailableDayController.Create (api) in 84.6242ms
+2025-11-22 19:44:35.531 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AvailableDayController.Create (api)'
+2025-11-22 19:44:35.532 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/AvailableDay/create - 400 1646 application/problem+json; charset=utf-8 194.231ms
+2025-11-22 19:44:53.899 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/AvailableDay/create - application/json-patch+json 220
+2025-11-22 19:44:53.901 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:44:53.901 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:44:53.907 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AvailableDayController.Create (api)'
+2025-11-22 19:44:53.907 +01:00 [INF] Route matched with {action = "Create", controller = "AvailableDay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Homecare.DTOs.AvailableDayDto) on controller Homecare.Controllers.AvailableDayController (api).
+2025-11-22 19:44:53.910 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-22 19:44:53.910 +01:00 [INF] Executed action Homecare.Controllers.AvailableDayController.Create (api) in 3.287ms
+2025-11-22 19:44:53.911 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AvailableDayController.Create (api)'
+2025-11-22 19:44:53.911 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/AvailableDay/create - 400 1646 application/problem+json; charset=utf-8 11.303ms
+2025-11-22 19:45:28.507 +01:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5169/api/AvailableDay/update/1 - application/json-patch+json 215
+2025-11-22 19:45:28.508 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:45:28.508 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:45:28.530 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AvailableDayController.Update (api)'
+2025-11-22 19:45:28.544 +01:00 [INF] Route matched with {action = "Update", controller = "AvailableDay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, Homecare.DTOs.AvailableDayDto) on controller Homecare.Controllers.AvailableDayController (api).
+2025-11-22 19:45:28.552 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-22 19:45:28.553 +01:00 [INF] Executed action Homecare.Controllers.AvailableDayController.Update (api) in 8.4927ms
+2025-11-22 19:45:28.553 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AvailableDayController.Update (api)'
+2025-11-22 19:45:28.554 +01:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5169/api/AvailableDay/update/1 - 400 1646 application/problem+json; charset=utf-8 46.8088ms
+2025-11-22 19:45:45.478 +01:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5169/api/AvailableDay/update/0 - application/json-patch+json 215
+2025-11-22 19:45:45.478 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:45:45.478 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:45:45.479 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AvailableDayController.Update (api)'
+2025-11-22 19:45:45.479 +01:00 [INF] Route matched with {action = "Update", controller = "AvailableDay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, Homecare.DTOs.AvailableDayDto) on controller Homecare.Controllers.AvailableDayController (api).
+2025-11-22 19:45:45.484 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-22 19:45:45.485 +01:00 [INF] Executed action Homecare.Controllers.AvailableDayController.Update (api) in 4.1597ms
+2025-11-22 19:45:45.485 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AvailableDayController.Update (api)'
+2025-11-22 19:45:45.485 +01:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5169/api/AvailableDay/update/0 - 400 1646 application/problem+json; charset=utf-8 7.4292ms
+2025-11-22 19:46:03.745 +01:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5169/api/AvailableDay/update/0 - application/json-patch+json 215
+2025-11-22 19:46:03.745 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:46:03.745 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:46:03.755 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AvailableDayController.Update (api)'
+2025-11-22 19:46:03.756 +01:00 [INF] Route matched with {action = "Update", controller = "AvailableDay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, Homecare.DTOs.AvailableDayDto) on controller Homecare.Controllers.AvailableDayController (api).
+2025-11-22 19:46:03.759 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-22 19:46:03.760 +01:00 [INF] Executed action Homecare.Controllers.AvailableDayController.Update (api) in 4.2796ms
+2025-11-22 19:46:03.760 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AvailableDayController.Update (api)'
+2025-11-22 19:46:03.761 +01:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5169/api/AvailableDay/update/0 - 400 1646 application/problem+json; charset=utf-8 15.9996ms
+2025-11-22 19:47:47.731 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Auth/login - application/json-patch+json 63
+2025-11-22 19:47:47.732 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:47:47.733 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:47:47.734 +01:00 [INF] Executing endpoint 'HomecareApp.Controllers.AuthController.Login (api)'
+2025-11-22 19:47:47.747 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Homecare.DTOs.LoginDto) on controller HomecareApp.Controllers.AuthController (api).
+2025-11-22 19:47:47.974 +01:00 [INF] [AuthAPIController] user authorised for string
+2025-11-22 19:47:47.975 +01:00 [INF] [AuthAPIController] JWT token created for string
+2025-11-22 19:47:47.975 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-22 19:47:47.976 +01:00 [INF] Executed action HomecareApp.Controllers.AuthController.Login (api) in 229.2073ms
+2025-11-22 19:47:47.976 +01:00 [INF] Executed endpoint 'HomecareApp.Controllers.AuthController.Login (api)'
+2025-11-22 19:47:47.976 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Auth/login - 200 485 application/json; charset=utf-8 245.2653ms
+2025-11-22 19:47:57.720 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Auth/logout - null 0
+2025-11-22 19:47:57.720 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:47:57.721 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:47:57.721 +01:00 [INF] Executing endpoint 'HomecareApp.Controllers.AuthController.Logout (api)'
+2025-11-22 19:47:57.726 +01:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller HomecareApp.Controllers.AuthController (api).
+2025-11-22 19:47:57.750 +01:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2025-11-22 19:47:57.753 +01:00 [INF] AuthenticationScheme: Identity.External signed out.
+2025-11-22 19:47:57.755 +01:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2025-11-22 19:47:57.755 +01:00 [INF] [AuthAPIController] user logged out
+2025-11-22 19:47:57.756 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-22 19:47:57.759 +01:00 [INF] Executed action HomecareApp.Controllers.AuthController.Logout (api) in 32.943ms
+2025-11-22 19:47:57.759 +01:00 [INF] Executed endpoint 'HomecareApp.Controllers.AuthController.Logout (api)'
+2025-11-22 19:47:57.759 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Auth/logout - 200 31 application/json; charset=utf-8 39.18ms
+2025-11-22 19:47:59.201 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Auth/logout - null 0
+2025-11-22 19:47:59.202 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:47:59.202 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:47:59.203 +01:00 [INF] Executing endpoint 'HomecareApp.Controllers.AuthController.Logout (api)'
+2025-11-22 19:47:59.203 +01:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller HomecareApp.Controllers.AuthController (api).
+2025-11-22 19:47:59.204 +01:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2025-11-22 19:47:59.204 +01:00 [INF] AuthenticationScheme: Identity.External signed out.
+2025-11-22 19:47:59.204 +01:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2025-11-22 19:47:59.204 +01:00 [INF] [AuthAPIController] user logged out
+2025-11-22 19:47:59.204 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-22 19:47:59.205 +01:00 [INF] Executed action HomecareApp.Controllers.AuthController.Logout (api) in 1.6933ms
+2025-11-22 19:47:59.212 +01:00 [INF] Executed endpoint 'HomecareApp.Controllers.AuthController.Logout (api)'
+2025-11-22 19:47:59.213 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Auth/logout - 200 31 application/json; charset=utf-8 11.1911ms
+2025-11-22 19:48:24.770 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Auth/login - application/json-patch+json 63
+2025-11-22 19:48:24.771 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:48:24.771 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:48:24.771 +01:00 [INF] Executing endpoint 'HomecareApp.Controllers.AuthController.Login (api)'
+2025-11-22 19:48:24.771 +01:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Homecare.DTOs.LoginDto) on controller HomecareApp.Controllers.AuthController (api).
+2025-11-22 19:48:24.938 +01:00 [INF] [AuthAPIController] user authorised for string
+2025-11-22 19:48:24.938 +01:00 [INF] [AuthAPIController] JWT token created for string
+2025-11-22 19:48:24.939 +01:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-22 19:48:24.939 +01:00 [INF] Executed action HomecareApp.Controllers.AuthController.Login (api) in 167.4892ms
+2025-11-22 19:48:24.939 +01:00 [INF] Executed endpoint 'HomecareApp.Controllers.AuthController.Login (api)'
+2025-11-22 19:48:24.939 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Auth/login - 200 485 application/json; charset=utf-8 169.0219ms
+2025-11-22 19:49:31.624 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Appointment/createAppointment - application/json-patch+json 379
+2025-11-22 19:49:31.624 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:49:31.624 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:49:31.626 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AppointmentController.Create (api)'
+2025-11-22 19:49:31.637 +01:00 [INF] Route matched with {action = "Create", controller = "Appointment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Homecare.DTOs.AppointmentDto) on controller Homecare.Controllers.AppointmentController (api).
+2025-11-22 19:49:31.653 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-22 19:49:31.654 +01:00 [INF] Executed action Homecare.Controllers.AppointmentController.Create (api) in 16.7349ms
+2025-11-22 19:49:31.654 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AppointmentController.Create (api)'
+2025-11-22 19:49:31.654 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Appointment/createAppointment - 400 1645 application/problem+json; charset=utf-8 30.7427ms
+2025-11-22 19:50:22.554 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Appointment/createAppointment - application/json-patch+json 354
+2025-11-22 19:50:22.557 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:50:22.557 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:50:22.558 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AppointmentController.Create (api)'
+2025-11-22 19:50:22.558 +01:00 [INF] Route matched with {action = "Create", controller = "Appointment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Homecare.DTOs.AppointmentDto) on controller Homecare.Controllers.AppointmentController (api).
+2025-11-22 19:50:22.562 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-22 19:50:22.562 +01:00 [INF] Executed action Homecare.Controllers.AppointmentController.Create (api) in 4.1813ms
+2025-11-22 19:50:22.562 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AppointmentController.Create (api)'
+2025-11-22 19:50:22.563 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Appointment/createAppointment - 400 256 application/problem+json; charset=utf-8 9.0208ms
+2025-11-22 19:51:18.680 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Appointment/createAppointment - application/json-patch+json 354
+2025-11-22 19:51:18.681 +01:00 [INF] CORS policy execution failed.
+2025-11-22 19:51:18.681 +01:00 [INF] Request origin http://localhost:5169 does not have permission to access the resource.
+2025-11-22 19:51:18.682 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AppointmentController.Create (api)'
+2025-11-22 19:51:18.682 +01:00 [INF] Route matched with {action = "Create", controller = "Appointment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Homecare.DTOs.AppointmentDto) on controller Homecare.Controllers.AppointmentController (api).
+2025-11-22 19:51:18.685 +01:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-11-22 19:51:18.685 +01:00 [INF] Executed action Homecare.Controllers.AppointmentController.Create (api) in 3.4435ms
+2025-11-22 19:51:18.686 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AppointmentController.Create (api)'
+2025-11-22 19:51:18.686 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Appointment/createAppointment - 400 256 application/problem+json; charset=utf-8 5.3814ms
+2025-11-22 19:52:23.930 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/index.html - null null
+2025-11-22 19:52:23.933 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/index.html - 200 null text/html;charset=utf-8 2.9332ms
+2025-11-22 19:52:24.029 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - null null
+2025-11-22 19:52:24.044 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.5986ms
+2025-11-22 23:18:49.735 +01:00 [INF] Application is shutting down...

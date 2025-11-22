@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Homecare.DAL;
 using Homecare.Models;
 using Homecare.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Homecare.Controllers
 {
@@ -43,7 +44,8 @@ namespace Homecare.Controllers
             return Ok(appointmentDtos);
         }
 
-        [HttpPost("create")]
+        [Authorize]
+        [HttpPost("createAppointment")]
         public async Task<IActionResult> Create([FromBody] AppointmentDto appointmentDto)
         {
             if (appointmentDto == null)
@@ -82,6 +84,7 @@ namespace Homecare.Controllers
             return Ok(appointment);
         }
 
+        [Authorize]
         [HttpPut("update/{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] AppointmentDto appointmentDto)
         {
@@ -116,6 +119,7 @@ namespace Homecare.Controllers
             return StatusCode(500, "Internal server error");
         }
 
+        [Authorize]
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
