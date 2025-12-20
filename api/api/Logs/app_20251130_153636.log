@@ -1,0 +1,20 @@
+2025-11-30 15:36:36.897 +01:00 [INF] Now listening on: http://localhost:5169
+2025-11-30 15:36:36.907 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-30 15:36:36.907 +01:00 [INF] Hosting environment: Development
+2025-11-30 15:36:36.907 +01:00 [INF] Content root path: C:\Skrivebord\Exam\Homecare\api
+2025-11-30 15:36:44.555 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDays - null null
+2025-11-30 15:36:44.618 +01:00 [INF] CORS policy execution successful.
+2025-11-30 15:36:44.627 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDays - 404 0 null 74.8962ms
+2025-11-30 15:36:44.676 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDays, Response status code: 404
+2025-11-30 15:36:44.681 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDays - null null
+2025-11-30 15:36:44.688 +01:00 [INF] CORS policy execution successful.
+2025-11-30 15:36:44.689 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDays - 404 0 null 9.2721ms
+2025-11-30 15:36:44.689 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDays, Response status code: 404
+2025-11-30 15:36:58.388 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/index.html - null null
+2025-11-30 15:36:58.492 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/index.html - 200 null text/html;charset=utf-8 104.3159ms
+2025-11-30 15:36:58.563 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - null null
+2025-11-30 15:36:58.748 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 185.3186ms
+2025-11-30 15:39:28.810 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDays - null null
+2025-11-30 15:39:28.811 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDays - 404 0 null 1.6734ms
+2025-11-30 15:39:28.812 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDays, Response status code: 404
+2025-11-30 15:40:21.686 +01:00 [INF] Application is shutting down...

@@ -1,0 +1,8 @@
+2025-12-04 00:41:45.143 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-04 00:41:45.271 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-04 00:41:45.382 +01:00 [INF] User profile is available. Using 'C:\Users\Hiban\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-04 00:41:45.429 +01:00 [INF] Now listening on: http://localhost:5169
+2025-12-04 00:41:45.432 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-04 00:41:45.433 +01:00 [INF] Hosting environment: Development
+2025-12-04 00:41:45.433 +01:00 [INF] Content root path: C:\Users\Hiban\Downloads\WEBAPP 02.12 2145\Homecare\api
+2025-12-04 01:09:07.079 +01:00 [INF] Application is shutting down...

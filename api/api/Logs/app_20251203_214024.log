@@ -1,0 +1,21 @@
+2025-12-03 21:40:25.005 +01:00 [INF] Now listening on: http://localhost:5169
+2025-12-03 21:40:25.013 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-03 21:40:25.014 +01:00 [INF] Hosting environment: Development
+2025-12-03 21:40:25.014 +01:00 [INF] Content root path: C:\Users\Hiban\Downloads\WEBAPP 02.12 2145\Homecare\api
+2025-12-03 21:40:27.302 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/ - null null
+2025-12-03 21:40:27.381 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/ - 404 0 null 85.5675ms
+2025-12-03 21:40:27.388 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/, Response status code: 404
+2025-12-03 21:40:30.972 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/index.html - null null
+2025-12-03 21:40:31.077 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/index.html - 200 null text/html;charset=utf-8 106.0398ms
+2025-12-03 21:40:31.091 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/swagger-ui.css - null null
+2025-12-03 21:40:31.091 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/swagger-ui-bundle.js - null null
+2025-12-03 21:40:31.091 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/swagger-ui-standalone-preset.js - null null
+2025-12-03 21:40:31.129 +01:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-12-03 21:40:31.132 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/swagger-ui.css - 200 143943 text/css 40.731ms
+2025-12-03 21:40:31.136 +01:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-12-03 21:40:31.136 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 44.4016ms
+2025-12-03 21:40:31.139 +01:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-12-03 21:40:31.139 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 48.0189ms
+2025-12-03 21:40:31.317 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - null null
+2025-12-03 21:40:31.485 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 168.1045ms
+2025-12-03 22:27:11.731 +01:00 [INF] Application is shutting down...

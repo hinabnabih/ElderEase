@@ -1,0 +1,26 @@
+2025-11-23 17:13:02.851 +01:00 [INF] User profile is available. Using 'C:\Users\Bruker\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-11-23 17:13:02.971 +01:00 [INF] Now listening on: http://localhost:5169
+2025-11-23 17:13:02.975 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-23 17:13:02.976 +01:00 [INF] Hosting environment: Development
+2025-11-23 17:13:02.976 +01:00 [INF] Content root path: C:\Skrivebord\Exam\Homecare\api
+2025-11-23 17:13:21.306 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDay - null null
+2025-11-23 17:13:21.364 +01:00 [INF] CORS policy execution failed.
+2025-11-23 17:13:21.365 +01:00 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2025-11-23 17:13:21.424 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDay - 404 0 null 124.8939ms
+2025-11-23 17:13:21.428 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDay, Response status code: 404
+2025-11-23 17:13:21.429 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDay - null null
+2025-11-23 17:13:21.432 +01:00 [INF] CORS policy execution failed.
+2025-11-23 17:13:21.432 +01:00 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2025-11-23 17:13:21.434 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDay - 404 0 null 5.0132ms
+2025-11-23 17:13:21.435 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDay, Response status code: 404
+2025-11-23 17:13:29.230 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDay - null null
+2025-11-23 17:13:29.231 +01:00 [INF] CORS policy execution failed.
+2025-11-23 17:13:29.232 +01:00 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2025-11-23 17:13:29.234 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDay - 404 0 null 3.9393ms
+2025-11-23 17:13:29.234 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDay, Response status code: 404
+2025-11-23 17:13:29.236 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDay - null null
+2025-11-23 17:13:29.236 +01:00 [INF] CORS policy execution failed.
+2025-11-23 17:13:29.236 +01:00 [INF] Request origin http://localhost:5173 does not have permission to access the resource.
+2025-11-23 17:13:29.236 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDay - 404 0 null 0.5997ms
+2025-11-23 17:13:29.236 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDay, Response status code: 404
+2025-11-23 17:14:08.398 +01:00 [INF] Application is shutting down...

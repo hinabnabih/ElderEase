@@ -1,17 +1,17 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Homecare.DAL;  // 🔴 Endret til Homecare
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Homecare.DAL;
+using Homecare.Models;
+using System.Text;
 using Serilog;
 using Serilog.Events;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Homecare.Models;  // 🔴 Endret til Homecare
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Kontrollere med NewtonsoftJson
+// Add controllers with NewtonsoftJson
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
@@ -19,7 +19,7 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 
 builder.Services.AddEndpointsApiExplorer();
 
-// Swagger med JWT støtte (som demo)
+// Swagger configuration with JWT support
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Homecare API", Version = "v1" });
@@ -45,40 +45,48 @@ builder.Services.AddSwaggerGen(c =>
             new string[] {}
         }
     });
+}); 
+
+// Database context - Application data (AvailableDays, Appointments)
+builder.Services.AddDbContext<HomecareDbContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:HomecareDbContextConnection"] ?? 
+                     "Data Source=Homecare.db");
 });
 
-// Database contexts (som versjon 2 og demo)
-builder.Services.AddDbContext<HomecareDbContext>(options => {
-    options.UseSqlite(builder.Configuration["ConnectionStrings:HomecareDbContextConnection"]);
+// Database context - Authentication (Identity)
+builder.Services.AddDbContext<AuthDbContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:AuthDbContextConnection"] ?? 
+                     "Data Source=auth.db");
 });
 
-builder.Services.AddDbContext<AuthDbContext>(options => {
-    options.UseSqlite(builder.Configuration["ConnectionStrings:AuthDbContextConnection"]);
-});
+// Identity configuration
+builder.Services.AddIdentity<AuthUser, IdentityRole>(options =>
+{
+    // Simplified password requirements for testing
+    options.Password.RequireDigit = false;
+    options.Password.RequiredLength = 3;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireLowercase = false;
+    options.User.RequireUniqueEmail = false;
+})
+.AddEntityFrameworkStores<AuthDbContext>()
+.AddDefaultTokenProviders();
 
-// Identity (forenklet som demo)
-builder.Services.AddIdentity<AuthUser, IdentityRole>()
-    .AddEntityFrameworkStores<AuthDbContext>()
-    .AddDefaultTokenProviders();
-
-// CORS (som demo - enklere)
+// CORS configuration
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder =>
     {
-        builder.WithOrigins("http://localhost:3000")  // Juster til din frontend
+        builder.WithOrigins("http://localhost:5173") // Allow requests from the React frontend
                .AllowAnyMethod()
                .AllowAnyHeader()
                .AllowCredentials();
     });
 });
 
-// Repositories
-builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
-builder.Services.AddScoped<IAvailableDayRepository, AvailableDayRepository>();
-
-// Authentication (som demo)
-builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -95,14 +103,19 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-            builder.Configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT key not found in configuration.")))
+        ValidIssuer = builder.Configuration["Jwt:Issuer"] ?? "http://localhost:5169",
+        ValidAudience = builder.Configuration["Jwt:Audience"] ?? "http://localhost:5173",
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? 
+            "ThisIsAVeryLongSecretKeyThatIsAtLeast32CharactersLong!")) //annerledes fra demo!!
     };
 });
 
-// Logging (som versjon 2 og demo)
+// Repositories
+builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+builder.Services.AddScoped<IAvailableDayRepository, AvailableDayRepository>();
+
+// Logging
 var loggerConfiguration = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.File($"APILogs/app_{DateTime.Now:yyyyMMdd_HHmmss}.log")
@@ -114,15 +127,32 @@ builder.Logging.AddSerilog(logger);
 
 var app = builder.Build();
 
-// Development setup (som demo - enklere)
+// Development setup
 if (app.Environment.IsDevelopment())
 {
-    DBInit.Seed(app);  // Sørg for at din DBInit håndterer roller
     app.UseSwagger();
     app.UseSwaggerUI();
+    
+    // Apply migrations and seed data
+    using var scope = app.Services.CreateScope();
+    var homecareContext = scope.ServiceProvider.GetRequiredService<HomecareDbContext>();
+    var authContext = scope.ServiceProvider.GetRequiredService<AuthDbContext>();
+    
+    try
+    {
+        homecareContext.Database.Migrate();
+        authContext.Database.Migrate();
+        
+        // Seed initial data if needed
+        // DBInit.Seed(app);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($" Database migration failed: {ex.Message}");
+    }
 }
 
-// Middleware i riktig rekkefølge (som demo)
+// Middleware pipeline
 app.UseStaticFiles();
 app.UseRouting();
 app.UseCors("CorsPolicy");

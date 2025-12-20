@@ -19,6 +19,7 @@ namespace Homecare.Controllers
             _logger = logger;
         }
 
+      
         [HttpGet("appointmentlist")]
         public async Task<IActionResult> AppointmentList()
         {
@@ -34,7 +35,7 @@ namespace Homecare.Controllers
                 AvailableDayId = appointment.AvailableDayId,
                 PatientName = appointment.PatientName,
                 TaskType = appointment.TaskType,
-                Description = appointment.Description,
+                //Description = appointment.Description,
                 AppointmentDate = appointment.AppointmentDate,
                 StartTime = appointment.StartTime,
                 EndTime = appointment.EndTime,
@@ -44,8 +45,8 @@ namespace Homecare.Controllers
             return Ok(appointmentDtos);
         }
 
-        [Authorize]
-        [HttpPost("createAppointment")]
+      
+        [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] AppointmentDto appointmentDto)
         {
             if (appointmentDto == null)
@@ -57,7 +58,7 @@ namespace Homecare.Controllers
                 AvailableDayId = appointmentDto.AvailableDayId,
                 PatientName = appointmentDto.PatientName,
                 TaskType = appointmentDto.TaskType,
-                Description = appointmentDto.Description,
+                //Description = appointmentDto.Description,
                 AppointmentDate = appointmentDto.AppointmentDate,
                 StartTime = appointmentDto.StartTime,
                 EndTime = appointmentDto.EndTime,
@@ -83,8 +84,7 @@ namespace Homecare.Controllers
             }
             return Ok(appointment);
         }
-
-        [Authorize]
+       
         [HttpPut("update/{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] AppointmentDto appointmentDto)
         {
@@ -102,7 +102,7 @@ namespace Homecare.Controllers
             existingAppointment.AvailableDayId = appointmentDto.AvailableDayId;
             existingAppointment.PatientName = appointmentDto.PatientName;
             existingAppointment.TaskType = appointmentDto.TaskType;
-            existingAppointment.Description = appointmentDto.Description;
+            //existingAppointment.Description = appointmentDto.Description;
             existingAppointment.AppointmentDate = appointmentDto.AppointmentDate;
             existingAppointment.StartTime = appointmentDto.StartTime;
             existingAppointment.EndTime = appointmentDto.EndTime;
@@ -118,8 +118,39 @@ namespace Homecare.Controllers
             _logger.LogWarning("[AppointmentController] Appointment update failed {@appointment}", existingAppointment);
             return StatusCode(500, "Internal server error");
         }
+        [HttpPut("cancel/{id}")]
+public async Task<IActionResult> CancelAppointment(int id)
+{
+    var appointment = await _repository.GetAppointmentById(id);
+    if (appointment == null)
+        return NotFound("Appointment not found");
 
-        [Authorize]
+    appointment.Status = "Cancelled";
+
+    bool updateSuccessful = await _repository.UpdateAppointment(appointment);
+    if (updateSuccessful)
+        return Ok(appointment);
+
+    return StatusCode(500, "Could not cancel appointment");
+}
+[HttpPut("complete/{id}")]
+public async Task<IActionResult> CompleteAppointment(int id)
+{
+    var appointment = await _repository.GetAppointmentById(id);
+    if (appointment == null)
+        return NotFound("Appointment not found");
+
+    appointment.Status = "Completed";
+
+    bool updateSuccessful = await _repository.UpdateAppointment(appointment);
+    if (updateSuccessful)
+        return Ok(appointment);
+
+    return StatusCode(500, "Could not mark appointment as completed");
+}
+
+
+    
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

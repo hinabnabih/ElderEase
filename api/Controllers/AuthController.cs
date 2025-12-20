@@ -30,7 +30,8 @@ namespace HomecareApp.Controllers
             _configuration = configuration;
             _logger = logger;
         }
- 
+
+       
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
         {
@@ -51,7 +52,7 @@ namespace HomecareApp.Controllers
              _logger.LogWarning("[AuthAPIController] user registration failed for {@username}", registerDto.Username);
             return BadRequest(result.Errors);
         }
- 
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
@@ -67,7 +68,7 @@ namespace HomecareApp.Controllers
             _logger.LogWarning("[AuthAPIController] user not authorised for {@username}", loginDto.Username);
             return Unauthorized();
         }
-[Authorize]
+        [Authorize]
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {

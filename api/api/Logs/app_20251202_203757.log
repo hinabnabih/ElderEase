@@ -1,0 +1,11 @@
+2025-12-02 20:37:58.091 +01:00 [INF] Applying migration '20251202193747_InitialCreate'.
+2025-12-02 20:37:58.136 +01:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AvailableDays" (
+    "AvailableDayId" INTEGER NOT NULL CONSTRAINT "PK_AvailableDays" PRIMARY KEY AUTOINCREMENT,
+    "Date" TEXT NOT NULL,
+    "StartTime" TEXT NOT NULL,
+    "EndTime" TEXT NOT NULL,
+    "HealthcareWorker" TEXT NOT NULL,
+    "Notes" TEXT NULL,
+    "ServiceType" TEXT NOT NULL
+);

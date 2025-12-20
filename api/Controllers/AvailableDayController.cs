@@ -19,7 +19,7 @@ namespace Homecare.Controllers
             _logger = logger;
         }
 
-        // GET: api/AvailableDay
+        [Authorize]
         [HttpGet("availabledays")]
         public async Task<IActionResult> GetAvailableDays()
         {
@@ -27,7 +27,7 @@ namespace Homecare.Controllers
             if (availableDays == null)
             {
                 _logger.LogError("No available days found.");
-                return NotFound();
+                return NotFound("No available days found.");
             }
 
             var availableDayDtos = availableDays.Select(day => new AvailableDayDto
@@ -43,8 +43,8 @@ namespace Homecare.Controllers
             return Ok(availableDayDtos);
         }
 
-        /*
-        // GET: api/AvailableDay/5
+        
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAvailableDay(int id)
         {
@@ -54,10 +54,9 @@ namespace Homecare.Controllers
                 _logger.LogError("Available day with ID: {id}, not found", id);
                 return NotFound("Available day not found");
             }
-            return Ok(AvailableDayDto);
-        }*/
+            return Ok(availableDay);
+        }
 
-        // Function to create a new available day
         [Authorize]
         [HttpPost("create")]
         public async Task<IActionResult> Create([FromBody] AvailableDayDto availableDayDto)
@@ -85,7 +84,6 @@ namespace Homecare.Controllers
             return StatusCode(500, "Internal server error");
         }
 
-        // Function to update an existing available day
         [Authorize]
         [HttpPut("update/{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] AvailableDayDto availableDayDto)
@@ -117,7 +115,6 @@ namespace Homecare.Controllers
             return StatusCode(500, "Internal server error");
         }
 
-        // Function to delete an available day
         [Authorize]
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteAvailableDay(int id)

@@ -5,22 +5,23 @@ namespace Homecare.Models
 {
     public class Appointment
     {
-        [Required]
+        
         public int AppointmentId { get; set; }
         
-        [Required]
+        
         public int AvailableDayId { get; set; }
 
-        [Required]
         [RegularExpression(@"^[a-zA-z0-9\s]{2,50}$",
             ErrorMessage ="The patient name must be between 2-50 characters.")]
         public string PatientName { get; set; } = string.Empty;
 
         [Required]
+        [RegularExpression(@"^(Assistance|Medication|Shopping|Chores|Cooking|Companionship|Transport|PersonalCare)$", 
+        ErrorMessage = "You have to choose a tasktype.")]
         public string TaskType { get; set; } = "Assistance"; // Assistance, Medication, Shopping, Chores
-        
-        public string? Description { get; set; }
 
+        //[StringLength(500, ErrorMessage = "Description can't be longer than 500 characters")]
+        //public string? Description { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
@@ -28,17 +29,18 @@ namespace Homecare.Models
 
         [Required]
         [DataType(DataType.Time)]
-        public TimeSpan StartTime { get; set; } = new TimeSpan(9, 0, 0);
+        public string? StartTime { get; set; } 
         
         [Required]
         [DataType(DataType.Time)]
-        public TimeSpan EndTime { get; set; } = new TimeSpan(17,0,0);
-
+        public string? EndTime { get; set; }
+        
         [Required]
         [RegularExpression(@"^[a-zA-z0-9\s]{2,50}$",
             ErrorMessage ="The caregiver name must be between 2-50 characters.")]
         public string CaregiverName { get; set; } = string.Empty;
 
+        [RegularExpression(@"^(Scheduled|Completed|Cancelled)$")]
         public string Status { get; set; } = "Scheduled"; // Scheduled, Completed, Cancelled
         
         // Navigation property

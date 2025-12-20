@@ -1,0 +1,20 @@
+2025-11-30 15:33:00.189 +01:00 [INF] Now listening on: http://localhost:5169
+2025-11-30 15:33:00.203 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-30 15:33:00.204 +01:00 [INF] Hosting environment: Development
+2025-11-30 15:33:00.204 +01:00 [INF] Content root path: C:\Skrivebord\Exam\Homecare\api
+2025-11-30 15:33:08.241 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDays - null null
+2025-11-30 15:33:08.324 +01:00 [INF] CORS policy execution successful.
+2025-11-30 15:33:08.337 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDays - 404 0 null 99.7814ms
+2025-11-30 15:33:08.399 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDays, Response status code: 404
+2025-11-30 15:33:08.403 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDays - null null
+2025-11-30 15:33:08.410 +01:00 [INF] CORS policy execution successful.
+2025-11-30 15:33:08.412 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDays - 404 0 null 10.1829ms
+2025-11-30 15:33:08.413 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDays, Response status code: 404
+2025-11-30 15:33:17.588 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDays - null null
+2025-11-30 15:33:17.596 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDays - 404 0 null 6.9986ms
+2025-11-30 15:33:17.596 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDays, Response status code: 404
+2025-11-30 15:33:34.791 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/index.html - null null
+2025-11-30 15:33:34.889 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/index.html - 200 null text/html;charset=utf-8 97.3745ms
+2025-11-30 15:33:34.973 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - null null
+2025-11-30 15:33:35.158 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 184.7384ms
+2025-11-30 15:35:54.746 +01:00 [INF] Application is shutting down...

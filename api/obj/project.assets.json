@@ -4315,24 +4315,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bruker\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Hiban\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Skrivebord\\Exam\\Homecare\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\Hiban\\Downloads\\ElderEasee\\ElderEase\\Homecare\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "C:\\Skrivebord\\Exam\\Homecare\\api\\api.csproj",
-      "packagesPath": "C:\\Users\\Bruker\\.nuget\\packages\\",
-      "outputPath": "C:\\Skrivebord\\Exam\\Homecare\\api\\obj\\",
+      "projectPath": "C:\\Users\\Hiban\\Downloads\\ElderEasee\\ElderEase\\Homecare\\api\\api.csproj",
+      "packagesPath": "C:\\Users\\Hiban\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hiban\\Downloads\\ElderEasee\\ElderEase\\Homecare\\api\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Bruker\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        "C:\\Users\\Hiban\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4350,11 +4345,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4441,7 +4431,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.121/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,0 +1,12 @@
+2025-11-30 15:29:16.407 +01:00 [INF] Now listening on: http://localhost:5169
+2025-11-30 15:29:16.417 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-30 15:29:16.420 +01:00 [INF] Hosting environment: Development
+2025-11-30 15:29:16.420 +01:00 [INF] Content root path: C:\Skrivebord\Exam\Homecare\api
+2025-11-30 15:29:26.400 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDay - null null
+2025-11-30 15:29:26.471 +01:00 [INF] CORS policy execution successful.
+2025-11-30 15:29:26.480 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDay - 404 0 null 82.7444ms
+2025-11-30 15:29:26.486 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDay, Response status code: 404
+2025-11-30 15:29:26.489 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDay - null null
+2025-11-30 15:29:26.494 +01:00 [INF] CORS policy execution successful.
+2025-11-30 15:29:26.495 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDay - 404 0 null 6.423ms
+2025-11-30 15:29:26.495 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5169/api/AvailableDay, Response status code: 404

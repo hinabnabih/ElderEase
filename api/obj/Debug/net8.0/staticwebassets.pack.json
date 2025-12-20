@@ -1,7 +1,15 @@
 {
   "Files": [
     {
-      "Id": "C:\\Skrivebord\\Exam\\Homecare\\api\\wwwroot\\site.css",
+      "Id": "C:\\Users\\Hiban\\Downloads\\ElderEasee\\ElderEase\\Homecare\\api\\wwwroot\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Hiban\\Downloads\\ElderEasee\\ElderEase\\Homecare\\api\\wwwroot\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Hiban\\Downloads\\ElderEasee\\ElderEase\\Homecare\\api\\wwwroot\\site.css",
       "PackagePath": "staticwebassets\\site.css"
     },
     {

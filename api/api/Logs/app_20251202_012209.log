@@ -1,0 +1,21 @@
+2025-12-02 01:22:09.240 +01:00 [INF] Now listening on: http://localhost:5169
+2025-12-02 01:22:09.249 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-02 01:22:09.249 +01:00 [INF] Hosting environment: Development
+2025-12-02 01:22:09.250 +01:00 [INF] Content root path: C:\Skrivebord\Exam\Homecare\api
+2025-12-02 01:22:32.089 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDay/availabledays - null null
+2025-12-02 01:22:32.170 +01:00 [INF] CORS policy execution successful.
+2025-12-02 01:22:32.178 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AvailableDayController.GetAvailableDays (api)'
+2025-12-02 01:22:32.229 +01:00 [INF] Route matched with {action = "GetAvailableDays", controller = "AvailableDay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAvailableDays() on controller Homecare.Controllers.AvailableDayController (api).
+2025-12-02 01:22:34.168 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Homecare.Models.AvailableDay, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Homecare.DTOs.AvailableDayDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-02 01:22:34.346 +01:00 [INF] Executed action Homecare.Controllers.AvailableDayController.GetAvailableDays (api) in 2108.3118ms
+2025-12-02 01:22:34.349 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AvailableDayController.GetAvailableDays (api)'
+2025-12-02 01:22:34.372 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDay/availabledays - 200 559 application/json; charset=utf-8 2288.2094ms
+2025-12-02 01:22:34.377 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5169/api/AvailableDay/availabledays - null null
+2025-12-02 01:22:34.388 +01:00 [INF] CORS policy execution successful.
+2025-12-02 01:22:34.389 +01:00 [INF] Executing endpoint 'Homecare.Controllers.AvailableDayController.GetAvailableDays (api)'
+2025-12-02 01:22:34.390 +01:00 [INF] Route matched with {action = "GetAvailableDays", controller = "AvailableDay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAvailableDays() on controller Homecare.Controllers.AvailableDayController (api).
+2025-12-02 01:22:34.498 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Homecare.Models.AvailableDay, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Homecare.DTOs.AvailableDayDto, api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-02 01:22:34.500 +01:00 [INF] Executed action Homecare.Controllers.AvailableDayController.GetAvailableDays (api) in 108.8495ms
+2025-12-02 01:22:34.500 +01:00 [INF] Executed endpoint 'Homecare.Controllers.AvailableDayController.GetAvailableDays (api)'
+2025-12-02 01:22:34.502 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5169/api/AvailableDay/availabledays - 200 559 application/json; charset=utf-8 125.6231ms
+2025-12-02 01:33:38.482 +01:00 [INF] Application is shutting down...

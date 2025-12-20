@@ -13,24 +13,23 @@ namespace Homecare.Models
 
         [Required]
         [DataType(DataType.Time)]
-        public TimeSpan StartTime { get; set; }
+        public string? StartTime { get; set; }
 
         [Required]
         [DataType(DataType.Time)]
-        public TimeSpan EndTime { get; set; }
-
+        public string? EndTime { get; set; }
+        
         [Required]
-        [RegularExpression(@"^[a-zA-z0-9\s]{2,50}$",
+        [RegularExpression(@"^[a-zA-ZæøåÆØÅ.\s]{2,50}$",
             ErrorMessage ="The healthcare name must be between 2-50 characters.")]
         public string HealthcareWorker { get; set; } = string.Empty;
         
         public string? Notes { get; set; }
 
         [Required]
-        public string ServiceType { get; set; } = "General Care"; // Assistance with shopping, Help with preparing meals, Household chores
-        
+        public string? ServiceType { get; set; } = "General Care"; // Assistance with shopping, Help with preparing meals, Household chores
+            
         // Navigation property
         public virtual List<Appointment>? Appointments { get; set; }
-
     }
 }

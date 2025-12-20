@@ -12,52 +12,88 @@ namespace Homecare.DAL
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
+            if (!context.AvailableDays.Any())
+            {
+                var availableDays = new List<AvailableDay>
+            {
+                new AvailableDay {
+                Date = DateTime.Today.AddDays(1),
+                StartTime = "08:00",
+                EndTime = "16:00",
+                HealthcareWorker = "Dr Jonas Hansen",
+                Notes = "Regular day schedule",
+                ServiceType = "General Care"
+            },
 
-            /*context.Database.Migrate();
-            System.Threading.Thread.Sleep(500);*/
+                new AvailableDay {
+                Date = DateTime.Today.AddDays(2),
+                StartTime = "10:00",
+                EndTime = "18:00",
+                HealthcareWorker = "Nurse Johansen",
+                Notes = "Can take extra appointments",
+                ServiceType = "Assistance with shopping"
+            },
 
+                new AvailableDay {
+                Date = DateTime.Today.AddDays(3),
+                StartTime = "09:00",
+                EndTime = "15:00",
+                HealthcareWorker = "Dr. Larsen",
+                Notes = "Short shift",
+                ServiceType = "Household chores"
 
-            var availableDays = new List<AvailableDay>
-                {
-                    new AvailableDay {
-                        Date = DateTime.Today.AddDays(1),
-                        HealthcareWorker = "Dr. Smith",
-                        Notes = "Morning shift"
-                    },
-                    new AvailableDay {
-                        Date = DateTime.Today.AddDays(2),
-                        HealthcareWorker = "Nurse Johnson",
-                        Notes = "Full day available"
-                    }
-                };
-            context.AddRange(availableDays);
-            context.SaveChanges();
+            },
+        };
 
-            var appointments = new List<Appointment>
-                {
-                    new Appointment {
-                        AvailableDayId = 1,
-                        PatientName = "John Doe",
-                        TaskType = "Medication Reminder",
-                        Description = "Morning medication",
-                        StartTime = new TimeSpan(9, 0, 0),
-                        EndTime = new TimeSpan(9, 30, 0),
-                        CaregiverName = "Rabia",
-                        Status = "Cancelled"
-                    },
-                    new Appointment {
-                        AvailableDayId = 2,
-                        PatientName = "Jane Smith",
-                        TaskType = "Physical Therapy",
-                        Description = "Afternoon session",
-                        StartTime = new TimeSpan(14, 0, 0),
-                        EndTime = new TimeSpan(15, 0, 0),
-                        CaregiverName = "Rabia",
-                        Status = "Completed"
-                    },
-                };
-            context.AddRange(appointments);
-            context.SaveChanges();
+                context.AddRange(availableDays);
+                context.SaveChanges();
+
+            }
+
+            if (!context.Appointments.Any())
+            {
+
+                var appointments = new List<Appointment>
+{
+    new Appointment {
+        AvailableDayId = 1,
+        PatientName = "John Doe",
+        TaskType = "Medication",
+        //Description = "Daily blood pressure medication",
+        AppointmentDate = DateTime.Today.AddDays(1),
+        StartTime = "09:00",
+        EndTime = "09:30",
+        CaregiverName = "Rabia",
+        Status = "Scheduled"
+    },
+    new Appointment {
+        AvailableDayId = 2,
+        PatientName = "Jane Smith",
+        TaskType = "Assistance",
+        //Description = "Help with grocery shopping",
+        AppointmentDate = DateTime.Today.AddDays(2),
+        StartTime = "11:00",
+        EndTime = "12:00",
+        CaregiverName = "Rabia",
+        Status = "Completed"
+    },
+    new Appointment {
+        AvailableDayId = 3,
+        PatientName = "Ola Nordmann",
+        TaskType = "Chores",
+        //Description = "Help with cleaning the living room",
+        AppointmentDate = DateTime.Today.AddDays(3),
+        StartTime = "13:00",
+        EndTime = "14:00",
+        CaregiverName = "Rabia",
+        Status = "Cancelled"
+    }
+};
+
+                context.AddRange(appointments);
+                context.SaveChanges();
+
+            }
         }
     }
 }

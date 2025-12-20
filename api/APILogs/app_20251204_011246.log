@@ -1,0 +1,17 @@
+2025-12-04 01:12:46.824 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-04 01:12:46.880 +01:00 [INF] No migrations were applied. The database is already up to date.
+2025-12-04 01:12:46.944 +01:00 [INF] User profile is available. Using 'C:\Users\Hiban\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-04 01:12:46.981 +01:00 [INF] Now listening on: http://localhost:5169
+2025-12-04 01:12:46.984 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-04 01:12:46.985 +01:00 [INF] Hosting environment: Development
+2025-12-04 01:12:46.985 +01:00 [INF] Content root path: C:\Users\Hiban\Downloads\WEBAPP 02.12 2145\Homecare\api
+2025-12-04 01:13:23.643 +01:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5169/api/Auth/register - null null
+2025-12-04 01:13:23.675 +01:00 [INF] CORS policy execution successful.
+2025-12-04 01:13:23.685 +01:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5169/api/Auth/register - 204 null null 45.1275ms
+2025-12-04 01:13:23.689 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5169/api/Auth/register - application/json 64
+2025-12-04 01:13:23.692 +01:00 [INF] CORS policy execution successful.
+2025-12-04 01:13:23.715 +01:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-12-04 01:13:23.718 +01:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-04 01:13:23.719 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5169/api/Auth/register - 401 0 null 29.554ms
+2025-12-04 01:15:28.341 +01:00 [INF] Application is shutting down...

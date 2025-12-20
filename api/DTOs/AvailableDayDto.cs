@@ -6,20 +6,24 @@ namespace Homecare.DTOs
     {
         public int AvailableDayId { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Date is required.")]
         public DateTime Date { get; set; }
 
-        [Required]
-        public TimeSpan StartTime { get; set; }
+        [Required(ErrorMessage = "Start time is required.")]
+        public string? StartTime { get; set; }
+
+        [Required(ErrorMessage = "End time is required.")]
+        public string? EndTime { get; set; }
 
         [Required]
-        public TimeSpan EndTime { get; set; }
-        
-        [Required]
+        [RegularExpression(@"^[a-zA-ZæøåÆØÅ.\s]{2,50}$", ErrorMessage = "The healthcare worker name must be between 2-30 characters ")]
         public string HealthcareWorker { get; set; } = string.Empty;
         
+        [StringLength(500, ErrorMessage = "Notes can't be longer than 500 characters")]
         public string? Notes { get; set; }
-        public string ServiceType { get; set; } = "General Care"; // Assistance with shopping, Help with preparing meals, Household chores
+
+        [Required(ErrorMessage = "Service type is required.")]
+        public string? ServiceType { get; set; }
         
     }
 }
