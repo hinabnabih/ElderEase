@@ -1,4 +1,4 @@
-## Elder Ease, a .NET Project 🚀
+## Elder Ease, a .NET Project 
 
 A full-stack web application designed for elderly users and healthcare workers to manage appointments and available time slots. The system features separate dashboards for:
 
@@ -8,12 +8,12 @@ Healthcare workers: Manage available days and time slots
 
 Admin panel: Oversight of all users and appointments
 
-## 🖥️ Demo
+## Demo:
 
 <img width="1892" height="1101" alt="image" src="https://github.com/user-attachments/assets/6841c0b4-0e02-486f-abf3-35885ac0a0a7" />
 
 
-## ⚡ Feautures
+## Feautures:
 
 User Authentication: Secure login/registration with input validation
 
@@ -28,9 +28,9 @@ Protected Routes: Authentication required for sensitive operations
 Responsive Design: Accessible on various devices
 
 
-## 💻 Tecnologies
+## Tecnologies used:
 
-🛠️ Technologies Used
+Technologies Used
 Frontend:
 React with TypeScript
 
@@ -53,7 +53,7 @@ Input validation with regex
 Protected routing
 
 
-## 🚀 Komme i gang
+## How to run the project:
 
 ```bash
 # Clone the repository:
