@@ -55,7 +55,6 @@ Protected routing
 
 ## How to run the project:
 
-```bash
 # Clone the repository:
 git clone https://github.com/hinabnabih/ElderEase.git
 
