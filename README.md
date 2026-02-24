@@ -1,12 +1,10 @@
 ## Elder Ease, a .NET Project 
 
-A full-stack web application designed for elderly users and healthcare workers to manage appointments and available time slots. The system features separate dashboards for:
+This project is a web application designed for elderly users and healthcare workers to manage appointments and administrating available day time slots. 
+The application is primarily for two types of users, elderly adults and healthcare workers. Elderly users can log into their accounts, and they will have an overview of their registered appointments. They can create new appointments, update existing ones, and delete appointments if needed.  
 
-Elderly users: View, create, update, and delete appointments
+Healthcare workers will be able to manage their available days. They can get an overview of their registered available days. And they will be able to create, update and delete a specific available day from their calendar based on their availability. All actions are managed by a admin user presenting both the elderly and the healthcare worker.
 
-Healthcare workers: Manage available days and time slots
-
-Admin panel: Oversight of all users and appointments
 
 ## Demo:
 
